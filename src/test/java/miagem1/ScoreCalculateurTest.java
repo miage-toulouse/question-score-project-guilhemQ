@@ -45,5 +45,21 @@ public class ScoreCalculateurTest {
         assertEquals(2*100f/3, score, 0.01f);
     }
 
+    @Test
+    public void testCalculeScoreQuestionUnDeuxTroisQuatreCinq() {
+        // when : on calcule le score en fonction des indices fournis par l'étudiant qui donne 1,2,3,4,5
+        float score = scoreCalculateur.calculeScore(new ArrayList<Integer>(Arrays.asList(1,2,3,4,5)), questionAChoixMultiple);
+        // then : le score obtenu est 0
+        assertEquals(0f, score, 0.01f);
+    }
+
+    @Test
+    public void testCalculeScoreQuestionUnDeuxTrois() {
+        // when : on calcule le score en fonction des indices fournis par l'étudiant qui donne 1,2,3
+        float score = scoreCalculateur.calculeScore(new ArrayList<Integer>(Arrays.asList(1,2,3)), questionAChoixMultiple);
+        // then : le score obtenu est 16.66
+        assertEquals(16.66f, score, 0.01f);
+    }
+
 
 }
